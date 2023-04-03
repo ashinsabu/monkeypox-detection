@@ -1,10 +1,17 @@
 import './App.css';
-
-function App() {
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import MobileNet from './pages/MobileNet';
+import Home from './pages/Home';
+import Trymodels from './pages/Trymodel'
+const App = () => {
   return (
-    <div className="App">
-
-    </div>
+      <BrowserRouter>
+            <Routes>
+                <Route exact path="/" element = {<Home/> } />
+                <Route exact path="/try" element = {<Trymodels/> } />
+                <Route exact path="/try/mobilenet" element = {<MobileNet/>} />
+            </Routes>
+        </BrowserRouter>
   );
 }
 
