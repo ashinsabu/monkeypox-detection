@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/monkeypox-detection/static/css/main.771bca87.css",
+    "main.js": "/monkeypox-detection/static/js/main.034ee281.js",
+    "static/js/787.81006c62.chunk.js": "/monkeypox-detection/static/js/787.81006c62.chunk.js",
+    "index.html": "/monkeypox-detection/index.html",
+    "main.771bca87.css.map": "/monkeypox-detection/static/css/main.771bca87.css.map",
+    "main.034ee281.js.map": "/monkeypox-detection/static/js/main.034ee281.js.map",
+    "787.81006c62.chunk.js.map": "/monkeypox-detection/static/js/787.81006c62.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.771bca87.css",
+    "static/js/main.034ee281.js"
+  ]
+}
