@@ -32,7 +32,7 @@ function Mobilenet() {
     const handleImageChange = async (e) => {
         let files = [];
         files[0] = e.target.files[0];
-        setImgFile(e.target);
+        setImgFile(e.target.files[0]);
         console.log(e);
         // console.log(e);
         if (files.length === 0) {
@@ -78,8 +78,10 @@ function Mobilenet() {
             {loading?
             <>
                 <span>Value: ...</span>
-                <img src='https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif' style={{width: 40}} alt="Loading..."></img>
-            </>: (predictedClass === null) ? `Value: `:`Value: ${predictedClass}`}</p>
+                <img src='https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif' style={{width: 28}} alt="Loading..."></img>
+            </>: (predictedClass === null) ? `Value: `:`Value: ${predictedClass}`}
+        </p>
+        <img src={imgFile? URL.createObjectURL(imgFile) : null} alt={imgFile? imgFile.name : null}/>
             
     </>);
 }
