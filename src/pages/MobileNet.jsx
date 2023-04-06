@@ -1,13 +1,12 @@
-import React, { useRef, useState,useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 import { readImageFile } from '../utils/readImageFile';
 import * as tf from '@tensorflow/tfjs';
 
 function Mobilenet() {
     const [model, setModel] = useState(null);
-    const [classLabels, setClassLabels] = useState(null);
     const [loading, setLoading] = useState(false);
     const [predictedClass, setPredictedClass] = useState(null);
-    const [imgSrc,setImgSrc] = useState(null);
+    const [imgFile,setImgFile] = useState(null);
     useEffect(() => {
       const loadModel = async () => {
         const model_url = "/finalmodel/model.json";
@@ -17,12 +16,8 @@ function Mobilenet() {
         setModel(model);
       };
     
-      const getClassLabels = () => {
-        setClassLabels(['pos','neg']);
-      };
     
       loadModel();
-      getClassLabels();
     }, []);
       
       const createHTMLImageElement = (imageSrc) => {
@@ -37,7 +32,8 @@ function Mobilenet() {
     const handleImageChange = async (e) => {
         let files = [];
         files[0] = e.target.files[0];
-        setImgSrc(e.target.files[0]);
+        setImgFile(e.target);
+        console.log(e);
         // console.log(e);
         if (files.length === 0) {
           setPredictedClass(null);
