@@ -1,12 +1,13 @@
 {
   "hosting": {
     "public": "build",
-    "site": "monkeypoxdetection",
+
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
+    "site": "monkeypoxdetect",
     "rewrites": [
       {
         "source": "**",
