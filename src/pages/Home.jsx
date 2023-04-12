@@ -1,10 +1,11 @@
 import '../App.css'
 import './Home.css';
-
+import NavBar from '../components/NavBar';
 const Home = () => {
     return (
         <div>
-            <p>Homepage</p>
+            <NavBar curPage = {0}/>
+            <p style={{textAlign: "center", marginTop: 128}}>HomePage</p>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import { readImageFile } from '../utils/readImageFile';
 import * as tf from '@tensorflow/tfjs';
+import NavBar from '../components/NavBar';
 
 function Mobilenet() {
     const [model, setModel] = useState(null);
@@ -72,6 +73,7 @@ function Mobilenet() {
       };
     return (
     <>
+        <NavBar curPage = {2}/>
         <p>Test</p>
         <input type="file" onChange={handleImageChange}></input>
         <p>
