@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react';
 import { readImageFile } from '../utils/readImageFile';
 import * as tf from '@tensorflow/tfjs';
 import NavBar from '../components/NavBar';
+import './MobileNet.css'
 
 function Mobilenet() {
     const [model, setModel] = useState(null);
@@ -74,16 +75,29 @@ function Mobilenet() {
     return (
     <>
         <NavBar curPage = {2}/>
-        <p>Test</p>
-        <input type="file" onChange={handleImageChange}></input>
-        <p>
-            {loading?
-            <>
-                <span>Value: ...</span>
-                <img src='https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif' style={{width: 28}} alt="Loading..."></img>
-            </>: (predictedClass === null) ? `Value: `:`Value: ${predictedClass}`}
-        </p>
-        <img src={imgFile? URL.createObjectURL(imgFile) : null} alt={imgFile? imgFile.name : null}/>
+        <div className="body-container">
+          <div className='modelContainer'>
+            <div className='modelInputContainer'>
+              <p className='container-title'>Upload an image file here(JPEG/PNG)</p>
+              <p className='container-content'>
+                <input type="file" onChange={handleImageChange}></input>
+                
+                <img src={imgFile? URL.createObjectURL(imgFile) : null} alt={imgFile? imgFile.name : null}/>
+              </p>
+            </div>
+            <div className='modelResultContainer'>
+              <p className='container-title'>Output Tensor Information / Results</p>
+              <p className='container-content'>
+                  {loading?
+                  <>
+                      <img src='https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif' style={{width: 28}} alt="Loading..."></img>
+                  </>: (predictedClass === null) ? `No Output`:`${predictedClass}`
+                  }
+              </p>
+            </div>
+          </div>
+        </div>
+        
             
     </>);
 }

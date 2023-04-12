@@ -15,4 +15,4 @@ firebase.getAnalytics(app);
 export default firebase;
 // to add features https://stackoverflow.com/questions/48492047/where-do-i-initialize-firebase-app-in-react-application
 // https://stackoverflow.com/questions/51011486/initializing-firebase-cli-features-in-an-existing-firebase-project-directory
-// deploy command firebase deploy --only hosting:monkeypoxdetection
+// deploy command firebase deploy --only hosting:monkeypoxdetect

@@ -4,11 +4,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
-    background-color: #453750;
+    color: #542E71;
+    background-color: #B3CBB9;
+    
 }
 .nav-links > a{
-    color: white;
+    color: #542E71;
 }
 .navbar-logo{
     font-size: 1.6em;
