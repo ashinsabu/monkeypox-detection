@@ -4,20 +4,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 30vh;
+    margin-top: 20vh;
 }
 
 .modelContainer{
     display: flex;
+    flex-wrap: wrap;
     border-radius: 5px;
     background-color: #6A66A3;
     color: white;
-    padding: 8px;
+    padding: 16px;
     box-sizing: border-box;
     gap: 8px;
 }
 .modelInputContainer, .modelResultContainer{
-    padding: 4px;
+    padding: 12px;
+    border-radius: 5px;
     box-sizing: border-box;
     border: 1px solid white;
     display: flex;
@@ -25,14 +27,54 @@
     /* justify-content: center; */
     align-items: center;
     gap: 4px;
-    min-height: 25vh;
+    flex: 1;
+}
+.container-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 32vh;
 }
 input{
     border: 1px solid;
+    border-radius: 5px;
     box-sizing: border-box;
     padding: 2px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 .container-title{
     font-size: 1em;
     font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 8px;
 }
+.yes-span{
+    color: greenyellow
+}
+h3{
+    font-size: 1.6em;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.result-text{
+    /* font-weight: bold; */
+    font-size: 1.1em;
+}
+.no-span{
+    color: red;
+}
+.output-label{
+    color: rgba(255, 255, 255, 0.681);
+}
+@media only screen and (max-width: 600px) {
+    .body-container{
+        margin-top: 2vh;
+        margin: 8px;
+    }
+    .container-title{
+        font-size: .7em;
+    }
+  }

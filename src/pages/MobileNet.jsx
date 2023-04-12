@@ -9,6 +9,9 @@ function Mobilenet() {
     const [loading, setLoading] = useState(false);
     const [predictedClass, setPredictedClass] = useState(null);
     const [imgFile,setImgFile] = useState(null);
+    const [threshold,setThreshold] = useState(0.5);
+
+    // const [predictions,setPredictions] = useState(null);
     useEffect(() => {
       const loadModel = async () => {
         const model_url = "/finalmodel/model.json";
@@ -35,7 +38,7 @@ function Mobilenet() {
         let files = [];
         files[0] = e.target.files[0];
         setImgFile(e.target.files[0]);
-        console.log(e);
+        // console.log(e);
         // console.log(e);
         if (files.length === 0) {
           setPredictedClass(null);
@@ -57,6 +60,7 @@ function Mobilenet() {
             const result = model.predict(tensorImg);
             // console.log(model.summary());
             const predictions = result.dataSync();
+            // setPredictions(predictions);
             // console.log(predictions);
             // CSSImportRule.log()
 
@@ -76,24 +80,39 @@ function Mobilenet() {
     <>
         <NavBar curPage = {2}/>
         <div className="body-container">
+          <h3>MobileNet V3</h3>
           <div className='modelContainer'>
             <div className='modelInputContainer'>
-              <p className='container-title'>Upload an image file here(JPEG/PNG)</p>
-              <p className='container-content'>
+              <p className='container-title'>Upload an image file here (JPEG/PNG)</p>
+              <div className='container-content'>
                 <input type="file" onChange={handleImageChange}></input>
                 
                 <img src={imgFile? URL.createObjectURL(imgFile) : null} alt={imgFile? imgFile.name : null}/>
-              </p>
+              </div>
             </div>
             <div className='modelResultContainer'>
               <p className='container-title'>Output Tensor Information / Results</p>
-              <p className='container-content'>
+              <div className='container-content'>
                   {loading?
-                  <>
-                      <img src='https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif' style={{width: 28}} alt="Loading..."></img>
-                  </>: (predictedClass === null) ? `No Output`:`${predictedClass}`
+                    <img src='https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif' style={{width: 28}} alt="Loading..."></img>
+                    :
+                    (predictedClass === null) ? 
+                      `No Output`
+                      :
+                      <div className='output-text'>
+                        <div>
+                          <p className='output-label'>Tensor Value</p>
+                          <p className='result-text'>{predictedClass}</p>
+                        </div>
+                        <div>
+                          <p className='output-label'>Classification</p> 
+                          <p className={predictedClass<threshold?"result-text yes-span":"result-text no-span"}>{predictedClass<threshold?'Yes':'No'}</p>
+                        </div>
+                        <p className='output-label'>Current Classification Threshold</p>
+                        <p className='result-text'>{threshold}</p>
+                      </div>
                   }
-              </p>
+              </div>
             </div>
           </div>
         </div>
