@@ -76,6 +76,18 @@ function Mobilenet() {
           setLoading(false);
         }
       };
+      const handleThresholdChange = (e) => {
+        console.log(e.target.value);
+        if(e.target.value < 0 || e.target.value > 1){
+          alert("Threshold not changed! (Range is 0-1)");
+          return;
+        }
+        if(e.target.value === ""){
+          setThreshold(0);
+          return;
+        }
+        setThreshold(e.target.value);
+      }
     return (
     <>
         <NavBar curPage = {2}/>
@@ -89,6 +101,7 @@ function Mobilenet() {
                 
                 <img src={imgFile? URL.createObjectURL(imgFile) : null} alt={imgFile? imgFile.name : null}/>
               </div>
+              <p><span>Set Threshold(default = 0.5): <input type='number' max={1} min={0} defaultValue={0.5} step={0.01} onChange={handleThresholdChange}></input></span></p>
             </div>
             <div className='modelResultContainer'>
               <p className='container-title'>Output Tensor Information / Results</p>
@@ -115,6 +128,7 @@ function Mobilenet() {
               </div>
             </div>
           </div>
+          <p className='note'>Note: If loading is taking too long try reuploading the image.</p>
         </div>
         
             

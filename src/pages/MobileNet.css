@@ -69,6 +69,16 @@ h3{
 .output-label{
     color: rgba(255, 255, 255, 0.681);
 }
+.note{
+    margin-top: 4px;
+    color: rgba(255, 255, 255, 0.571);
+    font-size: .7em;
+}
+input[type="number"]{
+    text-align: center;
+    width: fit-content;
+    border-radius: 0;
+}
 @media only screen and (max-width: 600px) {
     .body-container{
         margin-top: 2vh;
