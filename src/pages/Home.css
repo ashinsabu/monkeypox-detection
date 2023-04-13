@@ -1,0 +1,38 @@
+body{
+     color: white;
+}
+.hero{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    height: calc(100vh - 80px);
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+.hero > h2 {
+    font-size: 2.2em;
+    text-transform: uppercase;
+    /* font-weight: bolder; */
+}
+.hero > h1 {
+    font-size: 2.7em;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+.hero-bottom-buttons{
+    display: flex;
+    gap: 8px;
+}
+#viewResearch, #viewPlayground{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center
+    
+}
+#viewResearch{
+    padding: 4px 8px; 
+    ;
+    border: 1px solid white;
+}
