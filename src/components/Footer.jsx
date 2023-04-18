@@ -22,8 +22,8 @@ const Footer = () => {
                     <h4>Connect with the team</h4>
                     <h3>Ashin Sabu</h3>
                     <span className='socials-flex'>
-                        <a href='https://www.linkedin.com/in/ashin-sabu-1059a6175/'>
-                            <img src={LinkedIn} alt='LinkedIn' target='__blank'/>
+                        <a href='https://www.linkedin.com/in/ashin-sabu-1059a6175/' target='__blank'>
+                            <img src={LinkedIn} alt='LinkedIn' />
                         </a>
                         <a href='https://github.com/ashinsabu/' target='__blank'>
                             <img src={GitHub} alt='GitHub'/>
