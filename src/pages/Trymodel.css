@@ -6,16 +6,25 @@
     flex-direction: column;
     margin-top: 15vh;
     margin-bottom: 15vh;
+    text-align: center;
 }
 .middle-container h2{
     /* font-weight: bold; */
+    background-color: black;
+    padding: 4px 10px;
+    box-sizing: border-box;
     font-size: 2rem;
+    transition: all 0.2s;
+}
+.middle-container h2:hover{
+    background-color: rgba(0, 0, 0, 0.56);
+    color: rgba(255, 255, 255, 0.86);
 }
 
 .model-choose-container{
     display: flex;
     gap: 16px;
-    
+    flex-wrap: wrap;
 }
 .trybox{
     flex: 1 1 0;
@@ -55,3 +64,9 @@
 .model-choose-subtitle{
     color: rgba(255, 255, 255, 0.626);
 }
+
+@media only screen and (max-width: 800px) {
+    .model-choose-container{
+        padding: 8px;
+    }
+  }
