@@ -12,25 +12,46 @@
     font-size: 2rem;
 }
 
+.model-choose-container{
+    display: flex;
+    gap: 16px;
+    
+}
 .trybox{
+    flex: 1 1 0;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 15px;
     padding: 2rem;
-    background-color: #0f084bb7;
-    backdrop-filter: blur(5px);
+    background-color: black;
+    /* backdrop-filter: blur(5px); */
     transition: all 0.2s;
 }
+
 .trybox:hover{
-    background-color: #3a36619c;
+    background-color: rgba(0, 0, 0, 0.295);
     transform: scale(0.97);
 }
 .trybox:active{
     transform: scale(0.95);
 }
+.notworking{
+    /* background-color: #414141b7; */
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+}
 .middle-container img{
     width: 20vw;
     height: 20vw;
+}
+.model-choose-title{
+    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+.model-choose-subtitle{
+    color: rgba(255, 255, 255, 0.626);
 }

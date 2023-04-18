@@ -12,13 +12,27 @@ const TryModel = () => {
             <NavBar curPage = {2}/>
             <div className="middle-container">
                 <h2>Choose Model to Test</h2>
-                <Link to="/try/mobilenet" className='trybox'>
-                    <img src = {neuralnetImg2} alt='MobileNet'></img>
-                    <p className='model-title'>MobileNet V3</p>
-                    <p className='model-subtitle'>The portable and faster but less accurate model</p> 
-                </Link>
+                <div className="model-choose-container">
+                    <Link to="/try/mobilenet" className='trybox'>
+                        <img src = {neuralnetImg2} alt='MobileNet'></img>
+                        <p className='model-choose-title'>MobileNet V2</p>
+                        <p className='model-choose-subtitle'>The portable and faster but less accurate model</p> 
+                    </Link>
+                    <Link to="/try" className='trybox notworking'>
+                        <img src = {neuralNetImg} alt='MobileNet'></img>
+                        <p className='model-choose-title'>ResNet50 V2</p>
+                        <p className='model-choose-subtitle'>Our most accurate model</p> 
+                        <p className='model-choose-subtitle'>NOT HOSTED YET</p> 
+                    </Link>
+                    <Link to="/try" className='trybox notworking'>
+                        <img src = {neuralnetImg3} alt='MobileNet'></img>
+                        <p className='model-choose-title'>Xception</p>
+                        <p className='model-choose-subtitle'>A mid sized dependable model</p> 
+                        <p className='model-choose-subtitle'>NOT HOSTED YET</p> 
+                    </Link>
+                </div>
             </div>
-
+            
             <Footer/>
         </div>
     )
