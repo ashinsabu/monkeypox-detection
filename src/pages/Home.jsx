@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import neuralNetImg from "../assets/pngegg.png"
 const Home = () => {
     return (
-        <div>
+        <>
             <NavBar curPage = {0}/>
             <div className="main-container">
                 <div className="hero">
@@ -29,9 +29,9 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+                <Footer/>
             </div>
-            <Footer/>
-        </div>
+        </>
     )
 }
 export default Home;

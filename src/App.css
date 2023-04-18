@@ -21,6 +21,7 @@ a{
 body{
     /* background-color: #542E71; */
     background-image: url('./assets/bgimg.jpg');
+    backdrop-filter: brightness(0.9);
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;

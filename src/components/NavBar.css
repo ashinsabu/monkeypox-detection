@@ -5,7 +5,12 @@
     justify-content: space-between;
     align-items: center;
     
-    background-color: #0D0221;
+    /* background-color: #070113; */
+    /* background: linear-gradient(to bottom, #0000005a, transparent); */
+    position: sticky;
+    top: 0;
+    background-color: black;
+    z-index: 200;
     
 }
 .nav-links > a, .navbar{

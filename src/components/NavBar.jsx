@@ -6,7 +6,7 @@ const NavBar = (props) => {
     // pages 0 - Home, About Research , Playground
     
     return (
-        <div className='navbar'>
+        <nav className='navbar'>
             <div className='navbar-logo'>
                 Monkeypox Detection
             </div>
@@ -15,7 +15,7 @@ const NavBar = (props) => {
                 <Link to ="/research"><li className={props.curPage === 1?'active':'inactive'}>About the Research</li></Link>
                 <Link to="/try"><li className={props.curPage === 2?'active':'inactive'}>Try the models</li></Link>
             </ul>
-        </div>
+        </nav>
     );
 }
 
