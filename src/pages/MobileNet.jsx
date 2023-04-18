@@ -4,6 +4,7 @@ import * as tf from '@tensorflow/tfjs';
 import NavBar from '../components/NavBar';
 import './MobileNet.css'
 import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
 
 function Mobilenet() {
     const [model, setModel] = useState(null);
@@ -93,7 +94,7 @@ function Mobilenet() {
     <>
         <NavBar curPage = {2}/>
         <div className="body-container">
-          <h3>MobileNet V2</h3>
+          <span className='model-title-bar'><h3>MobileNet V2</h3></span>
           <div className='modelContainer'>
             <div className='modelInputContainer'>
               <p className='container-title'>Upload an image file here (JPEG/PNG)</p>
@@ -129,6 +130,8 @@ function Mobilenet() {
               </div>
             </div>
           </div>
+          
+          <Link to="/try" className='close-button'>{"< Back to Model Page"}</Link>
           <p className='note'>Note: If loading is taking too long try reuploading the image.</p>
         </div>
         <Footer/>

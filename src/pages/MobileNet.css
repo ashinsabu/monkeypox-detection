@@ -6,7 +6,19 @@
     justify-content: center;
     margin-top: 20vh;
 }
-
+.model-title-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.close-button{
+    padding: 4px;
+    color: white;
+    border-bottom: 1px solid transparent;
+}
+.close-button:hover{
+    border-bottom: 1px solid white;
+}
 .modelContainer{
     display: flex;
     flex-wrap: wrap;
@@ -58,7 +70,6 @@ h3{
     font-size: 1.6em;
     color: white;
     font-weight: bold;
-    margin-bottom: 8px;
 }
 .result-text{
     /* font-weight: bold; */
@@ -75,6 +86,7 @@ h3{
     color: rgba(255, 255, 255, 0.747);
     background-color: black;
     font-size: .7em;
+    margin-bottom: 128px;
 }
 input[type="number"]{
     text-align: center;

@@ -1,6 +1,36 @@
-.trybutton{
-    color: white;
+.middle-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-direction: column;
+    margin-top: 15vh;
+    margin-bottom: 15vh;
 }
-.trybutton:hover{
-    color: rgb(156, 156, 156);
+.middle-container h2{
+    /* font-weight: bold; */
+    font-size: 2rem;
+}
+
+.trybox{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    padding: 2rem;
+    background-color: #0f084bb7;
+    backdrop-filter: blur(5px);
+    transition: all 0.2s;
+}
+.trybox:hover{
+    background-color: #3a36619c;
+    transform: scale(0.97);
+}
+.trybox:active{
+    transform: scale(0.95);
+}
+.middle-container img{
+    width: 20vw;
+    height: 20vw;
 }
