@@ -19,13 +19,13 @@ const TryModel = () => {
                         <p className='model-choose-subtitle'>The portable and faster but less accurate model</p> 
                     </Link>
                     <Link to="/try" className='trybox notworking'>
-                        <img src = {neuralNetImg} alt='MobileNet'></img>
+                        <img src = {neuralnetImg3} alt='MobileNet'></img>
                         <p className='model-choose-title'>ResNet50 V2</p>
                         <p className='model-choose-subtitle'>Our most accurate model</p> 
                         <p className='model-choose-subtitle'>NOT HOSTED YET</p> 
                     </Link>
                     <Link to="/try" className='trybox notworking'>
-                        <img src = {neuralnetImg3} alt='MobileNet'></img>
+                        <img src = {neuralNetImg} alt='MobileNet'></img>
                         <p className='model-choose-title'>Xception</p>
                         <p className='model-choose-subtitle'>A mid sized dependable model</p> 
                         <p className='model-choose-subtitle'>NOT HOSTED YET</p> 

@@ -6,7 +6,11 @@ const About = () => {
     return (
         <div>
             <NavBar curPage = {1}/>
-            <p style={{textAlign: "center", marginTop: 128, height: 800}}>About the Research</p>
+            <p style={{textAlign: "center", marginTop: 128, height: 800}}>read more about models links
+            images
+            link to research paper
+            team images and introductions at bottom</p>
+            
             <Footer/>
         </div>
     )

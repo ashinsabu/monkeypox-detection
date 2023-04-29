@@ -32,7 +32,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 15px;
+    /* check if border radius is required */
+    /* border-radius: 15px; */
     padding: 2rem;
     background-color: black;
     /* backdrop-filter: blur(5px); */

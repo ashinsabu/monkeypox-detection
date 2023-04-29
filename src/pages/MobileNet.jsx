@@ -5,6 +5,9 @@ import NavBar from '../components/NavBar';
 import './MobileNet.css'
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
+import { app } from '../firebase';
+import ModelOutputBox from '../components/ModelOutputBox';
 
 function Mobilenet() {
     const [model, setModel] = useState(null);
@@ -12,30 +15,34 @@ function Mobilenet() {
     const [predictedClass, setPredictedClass] = useState(null);
     const [imgFile,setImgFile] = useState(null);
     const [threshold,setThreshold] = useState(0.5);
-
+    const [modelLoading, setModelLoading] = useState(true);
     // const [predictions,setPredictions] = useState(null);
     useEffect(() => {
-      const loadModel = async () => {
-        const model_url = "/finalmodel/model.json";
-    
-        const model = await tf.loadLayersModel(model_url);
-        // console.log(model);
-        setModel(model);
-      };
-    
-    
-      loadModel();
+       loadModel();
     }, []);
+    
+    const loadModel = async () => {
+      console.log("Downloading Model from cloud resource...")
+      const storage = getStorage();
+      // const download_url = await getDownloadURL(ref(storage, 'mobilenet/model.json'))
       
-      const createHTMLImageElement = (imageSrc) => {
-        return new Promise((resolve) => {
-          const img = new Image();
+      const download_url = "https://raw.githubusercontent.com/ashinsabu/monkeypox-website-models/main/mobilenet/model.json";
+      const model = await tf.loadLayersModel(download_url);
       
-          img.onload = () => resolve(img);
-      
-          img.src = imageSrc;
-        });
-      };
+      setModel(model);
+      console.log("Model Downloaded and set!")
+    };
+
+    const createHTMLImageElement = (imageSrc) => {
+      return new Promise((resolve) => {
+        const img = new Image();
+    
+        img.onload = () => resolve(img);
+    
+        img.src = imageSrc;
+      });
+    };
+
     const handleImageChange = async (e) => {
         let files = [];
         files[0] = e.target.files[0];
@@ -95,7 +102,9 @@ function Mobilenet() {
         <NavBar curPage = {2}/>
         <div className="body-container">
           <span className='model-title-bar'><h3>MobileNet V2</h3></span>
+
           <div className='modelContainer'>
+
             <div className='modelInputContainer'>
               <p className='container-title'>Upload an image file here (JPEG/PNG)</p>
               <div className='container-content'>
@@ -105,30 +114,9 @@ function Mobilenet() {
               </div>
               <p><span>Set Threshold(default = 0.5): <input type='number' max={1} min={0} defaultValue={0.5} step={0.01} onChange={handleThresholdChange}></input></span></p>
             </div>
-            <div className='modelResultContainer'>
-              <p className='container-title'>Output Tensor Information / Results</p>
-              <div className='container-content'>
-                  {loading?
-                    <img src='https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif' style={{width: 28}} alt="Loading..."></img>
-                    :
-                    (predictedClass === null) ? 
-                      `No Output`
-                      :
-                      <div className='output-text'>
-                        <div>
-                          <p className='output-label'>Tensor Value</p>
-                          <p className='result-text'>{predictedClass}</p>
-                        </div>
-                        <div>
-                          <p className='output-label'>Classification</p> 
-                          <p className={predictedClass<threshold?"result-text yes-span":"result-text no-span"}>{predictedClass<threshold?'Yes':'No'}</p>
-                        </div>
-                        <p className='output-label'>Current Classification Threshold</p>
-                        <p className='result-text'>{threshold}</p>
-                      </div>
-                  }
-              </div>
-            </div>
+
+            <ModelOutputBox loading = {loading} predictedClass ={predictedClass} threshold = {threshold} />
+            
           </div>
           
           <Link to="/try" className='close-button'>{"< Back to Model Page"}</Link>
