@@ -2,15 +2,15 @@ import React, { useState,useEffect } from 'react';
 import { readImageFile } from '../utils/readImageFile';
 import * as tf from '@tensorflow/tfjs';
 import NavBar from '../components/NavBar';
-import './MobileNet.css'
+import './ResNet.css'
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import { app } from '../firebase';
 import ModelOutputBox from '../components/ModelOutputBox';
 import ModelInputBox from '../components/ModelInputBox';
-
-function Mobilenet() {
+import loadingGif from "../assets/loading-gif.gif"
+function ResNet() {
     const [model, setModel] = useState(null);
     const [loading, setLoading] = useState(false);
     const [predictedClass, setPredictedClass] = useState(null);
@@ -27,7 +27,7 @@ function Mobilenet() {
       const storage = getStorage();
       // const download_url = await getDownloadURL(ref(storage, 'mobilenet/model.json'))
       
-      const download_url = "https://raw.githubusercontent.com/ashinsabu/monkeypox-website-models/main/mobilenet/model.json";
+      const download_url = "https://raw.githubusercontent.com/ashinsabu/monkeypox-website-models/main/resnet/model.json";
       const model = await tf.loadLayersModel(download_url);
       
       setModel(model);
@@ -103,11 +103,20 @@ function Mobilenet() {
     <>
         <NavBar curPage = {2}/>
         <div className="body-container">
-          <span className='model-title-bar'><h3>MobileNet V2</h3></span>
+          <span className='model-title-bar'><h3>ResNet50 V2</h3></span>
 
           <div className='modelContainer'>
 
-            {modelLoading? <p style={{display: 'flex', alignItems: 'center'}}>Downloading hosted model from Cloud Resource...</p>: 
+            {modelLoading? 
+            <div className='resnet-loading'>
+                <p style={{display: 'flex', alignItems: 'center'}}>Downloading ResNet from Cloud Resource...</p>
+                
+                <img src={loadingGif} alt='ResNet Loading...'/>
+
+                <p style={{display: 'flex', alignItems: 'center'}}>It may take a while to load </p>
+                <p style={{display: 'flex', alignItems: 'center'}}>since ResNet is a heavier model. (~100MB)</p>
+            </div>
+            : 
             <>
               <ModelInputBox handleImageChange={handleImageChange} handleThresholdChange={handleThresholdChange} imgFile={imgFile} />
               
@@ -119,11 +128,11 @@ function Mobilenet() {
           </div>
           
           <Link to="/try" className='close-button'>{"< Back to Model Page"}</Link>
-          <p className='note'>Note: If loading is taking too long try reuploading the image or refreshing.</p>
+          <p className='note'>Note: If loading is taking too long (>10 minutes) try reuploading the image or refreshing.</p>
         </div>
         <Footer/>
             
     </>);
 }
 
-export default Mobilenet;
+export default ResNet;
