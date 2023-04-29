@@ -5,8 +5,8 @@ import NavBar from '../components/NavBar';
 import './MobileNet.css'
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
-import { getStorage, ref, getDownloadURL } from "firebase/storage";
-import { app } from '../firebase';
+// import { getStorage, ref, getDownloadURL } from "firebase/storage";
+// import { app } from '../firebase';
 import ModelOutputBox from '../components/ModelOutputBox';
 import ModelInputBox from '../components/ModelInputBox';
 
@@ -24,7 +24,7 @@ function Mobilenet() {
     
     const loadModel = async () => {
       // console.log("Downloading Model from cloud resource...")
-      const storage = getStorage();
+      // const storage = getStorage();
       // const download_url = await getDownloadURL(ref(storage, 'mobilenet/model.json'))
       
       const download_url = "https://raw.githubusercontent.com/ashinsabu/monkeypox-website-models/main/mobilenet/model.json";

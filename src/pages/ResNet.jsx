@@ -5,8 +5,8 @@ import NavBar from '../components/NavBar';
 import './ResNet.css'
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
-import { getStorage, ref, getDownloadURL } from "firebase/storage";
-import { app } from '../firebase';
+// import { getStorage, ref, getDownloadURL } from "firebase/storage";
+// import { app } from '../firebase';
 import ModelOutputBox from '../components/ModelOutputBox';
 import ModelInputBox from '../components/ModelInputBox';
 import loadingGif from "../assets/loading-gif.gif"
@@ -24,7 +24,7 @@ function ResNet() {
     
     const loadModel = async () => {
       // console.log("Downloading Model from cloud resource...")
-      const storage = getStorage();
+    //   const storage = getStorage();
       // const download_url = await getDownloadURL(ref(storage, 'mobilenet/model.json'))
       
       const download_url = "https://raw.githubusercontent.com/ashinsabu/monkeypox-website-models/main/resnet/model.json";
@@ -128,7 +128,7 @@ function ResNet() {
           </div>
           
           <Link to="/try" className='close-button'>{"< Back to Model Page"}</Link>
-          <p className='note'>Note: If loading is taking too long (>10 minutes) check your bandwidth, try reuploading the image or refreshing.</p>
+          <p className='note'>Note: If loading is taking too long (&gt;10 minutes) check your bandwidth, try reuploading the image or refreshing.</p>
         </div>
         <Footer/>
             
