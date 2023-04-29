@@ -108,7 +108,7 @@ function Mobilenet() {
           <div className='modelContainer mobilenetbg'>
 
             {modelLoading? 
-            <p style={{display: 'flex', alignItems: 'center'}}>Downloading MobileNet from Cloud Resource...</p>
+            <p style={{display: 'flex', alignItems: 'center', height: '200px', padding: '32px', boxSizing:'border-box'}}>Downloading MobileNet from Cloud Resource...</p>
             : 
             <>
               <ModelInputBox handleImageChange={handleImageChange} handleThresholdChange={handleThresholdChange} imgFile={imgFile} />

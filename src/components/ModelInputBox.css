@@ -1,4 +1,4 @@
-.modelResultContainer{
+.modelInputContainer{
     padding: 12px;
     border-radius: 5px;
     box-sizing: border-box;
@@ -31,23 +31,10 @@ input{
     text-transform: uppercase;
     margin-bottom: 8px;
 }
-.yes-span{
-    color: greenyellow
-}
 h3{
     font-size: 1.6em;
     color: white;
     font-weight: bold;
-}
-.result-text{
-    /* font-weight: bold; */
-    font-size: 1.1em;
-}
-.no-span{
-    color: red;
-}
-.output-label{
-    color: rgba(255, 255, 255, 0.681);
 }
 .note{
     margin-top: 4px;
@@ -55,4 +42,9 @@ h3{
     background-color: black;
     font-size: .7em;
     margin-bottom: 128px;
+}
+input[type="number"]{
+    text-align: center;
+    width: fit-content;
+    border-radius: 0;
 }

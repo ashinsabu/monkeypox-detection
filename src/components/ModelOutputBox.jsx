@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "./ModelOutputBox.css"
 const ModelOutputBox = ({loading , predictedClass, threshold}) => {
     return (
         <div className='modelResultContainer'>

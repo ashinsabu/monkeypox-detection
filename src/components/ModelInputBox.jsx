@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "./ModelInputBox.css"
 const ModelInputBox = ({ handleImageChange, handleThresholdChange, imgFile }) => {
     return (
         <div className='modelInputContainer'>
