@@ -105,9 +105,11 @@ function Mobilenet() {
         <div className="body-container">
           <span className='model-title-bar'><h3>MobileNet V2</h3></span>
 
-          <div className='modelContainer'>
+          <div className='modelContainer mobilenetbg'>
 
-            {modelLoading? <p style={{display: 'flex', alignItems: 'center'}}>Downloading hosted model from Cloud Resource...</p>: 
+            {modelLoading? 
+            <p style={{display: 'flex', alignItems: 'center'}}>Downloading MobileNet from Cloud Resource...</p>
+            : 
             <>
               <ModelInputBox handleImageChange={handleImageChange} handleThresholdChange={handleThresholdChange} imgFile={imgFile} />
               
@@ -119,7 +121,7 @@ function Mobilenet() {
           </div>
           
           <Link to="/try" className='close-button'>{"< Back to Model Page"}</Link>
-          <p className='note'>Note: If loading is taking too long try reuploading the image or refreshing.</p>
+          <p className='note'>Note: If loading is taking too long check your bandwidth, try reuploading the image or refreshing.</p>
         </div>
         <Footer/>
             

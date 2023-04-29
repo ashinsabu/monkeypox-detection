@@ -18,11 +18,11 @@ const TryModel = () => {
                         <p className='model-choose-title'>MobileNet V2</p>
                         <p className='model-choose-subtitle'>The portable and faster but less accurate model</p> 
                     </Link>
-                    <Link to="/try" className='trybox notworking'>
+                    <Link to="/try/resnet" className='trybox'>
                         <img src = {neuralnetImg3} alt='MobileNet'></img>
                         <p className='model-choose-title'>ResNet50 V2</p>
-                        <p className='model-choose-subtitle'>Our most accurate model</p> 
-                        <p className='model-choose-subtitle'>NOT HOSTED YET</p> 
+                        <p className='model-choose-subtitle'>Our MOST accurate model</p> 
+                        <p className='model-choose-subtitle'>Slow to load and predict but highly accurate</p> 
                     </Link>
                     <Link to="/try" className='trybox notworking'>
                         <img src = {neuralNetImg} alt='MobileNet'></img>

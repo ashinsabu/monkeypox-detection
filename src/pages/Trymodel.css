@@ -51,6 +51,7 @@
     /* background-color: #414141b7; */
     filter: grayscale(1);
     -webkit-filter: grayscale(1);
+    cursor: not-allowed;
 }
 .middle-container img{
     width: 20vw;

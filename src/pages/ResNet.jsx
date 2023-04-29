@@ -105,7 +105,7 @@ function ResNet() {
         <div className="body-container">
           <span className='model-title-bar'><h3>ResNet50 V2</h3></span>
 
-          <div className='modelContainer'>
+          <div className='modelContainer resnetbg'>
 
             {modelLoading? 
             <div className='resnet-loading'>
@@ -128,7 +128,7 @@ function ResNet() {
           </div>
           
           <Link to="/try" className='close-button'>{"< Back to Model Page"}</Link>
-          <p className='note'>Note: If loading is taking too long (>10 minutes) try reuploading the image or refreshing.</p>
+          <p className='note'>Note: If loading is taking too long (>10 minutes) check your bandwidth, try reuploading the image or refreshing.</p>
         </div>
         <Footer/>
             
