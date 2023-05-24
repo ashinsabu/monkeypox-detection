@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import "./About.css"
 import ashinImage from "../assets/ashin.jpg"
 import rohanImage from "../assets/rohan.jpeg"
-
+import adityaImage from "../assets/adityagupta.jpg"
 import LinkedIn from "../assets/linkedin.png";
 import GitHub from "../assets/github.png";
 import Twitter from "../assets/twitter.png";
@@ -59,12 +59,17 @@ const About = () => {
                             </div>
                         </div>
                         <div className="team-member">
-                            <img src="https://cdn-icons-png.flaticon.com/512/53/53133.png" alt="Aditya Gupta" />
+                            <img src={adityaImage} alt="Aditya Gupta" />
                             <div>
                                 <h3>Prof. Aditya Gupta</h3>
                                 <h4>Mentor for Research and Literature</h4>
                                 <p>Professor - CSE</p>
                                 <p>Manipal University Jaipur</p>  
+                                <span className='about-socials'>
+                                    <a href='https://www.linkedin.com/in/aditya-gupta-946a24a1' target='__blank'>
+                                        <img src={LinkedIn} alt='LinkedIn'/>
+                                    </a>
+                                </span>
                             </div>
                         </div>
                     </div>
