@@ -25,7 +25,7 @@ function Xception() {
       // const storage = getStorage();
       // const download_url = await getDownloadURL(ref(storage, 'mobilenet/model.json'))
       
-      const download_url = "https://raw.githubusercontent.com/ashinsabu/monkeypox-website-models/main/mobilenet/model.json";
+      const download_url = "https://raw.githubusercontent.com/ashinsabu/monkeypox-website-models/main/xception/model.json";
       const model = await tf.loadLayersModel(download_url);
       
       setModel(model);
@@ -101,12 +101,12 @@ function Xception() {
     <>
         <NavBar curPage = {2}/>
         <div className="body-container">
-          <span className='model-title-bar'><h3>MobileNet V2</h3></span>
+          <span className='model-title-bar'><h3>Xception</h3></span>
 
           <div className='modelContainer mobilenetbg'>
 
             {modelLoading? 
-            <p style={{display: 'flex', alignItems: 'center', height: '200px', padding: '32px', boxSizing:'border-box'}}>Downloading MobileNet from Cloud Resource...</p>
+            <p style={{display: 'flex', alignItems: 'center', height: '200px', padding: '32px', boxSizing:'border-box'}}>Downloading Xception from Cloud Resource...</p>
             : 
             <>
               <ModelInputBox handleImageChange={handleImageChange} handleThresholdChange={handleThresholdChange} imgFile={imgFile} />
