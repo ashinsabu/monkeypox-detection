@@ -15,3 +15,6 @@ Code for model development is available <a href="https://github.com/rohanthorat2
 # Find the models here
 The files of MobileNet, Resnet and Xception being used are uploaded to this repository 
 https://github.com/ashinsabu/monkeypox-website-models
+
+
+Other working version of website if the given links don't work: https://monkeypoxdetect.firebaseapp.com/
