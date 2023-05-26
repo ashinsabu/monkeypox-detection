@@ -3,9 +3,9 @@ A react app built to test and read about convolutional neural networks (MobileNe
 Pre trained models and relevant research do not belong to me.
 
 # Demo
-You may visit the website <a href="https://monkeypoxdetect.firebaseapp.com/" target = "_blank" >HERE</a>
+You may visit the website <a href = "https://monkeypoxdetect.web.app/" target = "_blank" > HERE </a>
 
-To try out the models yourself go <a href="https://monkeypoxdetect.firebaseapp.com/try/" target = "_blank">HERE</a>
+To try out the models yourself go <a href = "https://monkeypoxdetect.web.app/try" target = "_blank" > HERE </a>
 
 # About the research conducted
 Extensive research and experimentation on an open source dataset from Kaggle was conducted by <a href = "https://www.linkedin.com/in/rohan-thorat-b1655a253/">Rohan Thorat</a> and Mr. Aditya Gupta of Manipal University Jaipur.
