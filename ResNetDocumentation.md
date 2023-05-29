@@ -72,4 +72,4 @@ This project was created as a demonstration of implementing a machine learning m
 
 Future improvements may include optimization for faster model loading and more detailed prediction results.
 
-Project by <b>Your Name</b>
+Project by <b>Ashin Sabu</b>
