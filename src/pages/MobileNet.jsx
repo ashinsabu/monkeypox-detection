@@ -114,7 +114,7 @@ function Mobilenet() {
           <div className='modelContainer mobilenetbg'>
 
             {modelLoading? 
-            <LoadingInfo modelLoadProgress ={modelLoadProgress}/>
+            <LoadingInfo modelName = 'mobilenet' modelLoadProgress ={modelLoadProgress}/>
             : 
             <>
               <ModelInputBox handleImageChange={handleImageChange} handleThresholdChange={handleThresholdChange} imgFile={imgFile} />
