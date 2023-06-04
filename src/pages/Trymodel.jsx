@@ -22,8 +22,7 @@ const TryModel = () => {
                     <Link to="/try/xception" className='trybox'>
                         <img src = {neuralNetImg} alt='MobileNet'></img>
                         <p className='model-choose-title'>Xception</p>
-                        <p className='model-choose-subtitle'>A mid sized dependable model</p> 
-                        <p className='model-choose-subtitle'>NOT HOSTED YET</p> 
+                        <p className='model-choose-subtitle'>A mid-sized graph based model that trades accuracy for faster predictions</p> 
                     </Link>
 
                     <Link to="/try/resnet" className='trybox'>
