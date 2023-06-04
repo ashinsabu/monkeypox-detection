@@ -7,7 +7,6 @@ import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import ModelOutputBox from '../components/ModelOutputBox';
 import ModelInputBox from '../components/ModelInputBox';
-import loadingGif from "../assets/loading-gif.gif"
 import LoadingBar from 'react-top-loading-bar';
 import { LoadingInfo } from '../components/LoadingInfo';
 function ResNet() {
@@ -31,7 +30,7 @@ function ResNet() {
       const download_url = "https://raw.githubusercontent.com/ashinsabu/monkeypox-website-models/main/resnet/model.json";
       const model = await tf.loadLayersModel(download_url,  {onProgress: (x) => {
         setModelLoadProgress(x)
-        console.log(x);
+        // console.log(x);
       }});
       
       setModel(model);

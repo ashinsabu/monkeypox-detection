@@ -29,7 +29,7 @@ function Xception() {
       const download_url = "https://raw.githubusercontent.com/ashinsabu/monkeypox-website-models/main/xception/model.json";
       const model = await tf.loadLayersModel(download_url,  {onProgress: (x) => {
         setModelLoadProgress(x)
-        console.log(x);
+        // console.log(x);
       }});
       
       setModel(model);
