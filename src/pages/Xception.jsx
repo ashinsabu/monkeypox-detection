@@ -27,6 +27,11 @@ function Xception() {
       // const download_url = await getDownloadURL(ref(storage, 'mobilenet/model.json'))
       
       const download_url = "https://raw.githubusercontent.com/ashinsabu/monkeypox-website-models/main/xception/model.json";
+      
+      // fix for loadLayersModel for Xception is in Models repository https://github.com/ashinsabu/monkeypox-website-models/commit/2fc2225711d510fe2d99b264a82aefb6ccca6992
+      // solution from https://github.com/tensorflow/tfjs/issues/1739
+      // TODO: See why this works
+      
       const model = await tf.loadLayersModel(download_url,  {onProgress: (x) => {
         setModelLoadProgress(x)
         // console.log(x);
