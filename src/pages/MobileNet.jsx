@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 // import { app } from '../firebase';
 import ModelOutputBox from '../components/ModelOutputBox';
 import ModelInputBox from '../components/ModelInputBox';
-
+import LoadingBar from 'react-top-loading-bar';
 function Mobilenet() {
     const [model, setModel] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -17,6 +17,7 @@ function Mobilenet() {
     const [imgFile,setImgFile] = useState(null);
     const [threshold,setThreshold] = useState(0.5);
     const [modelLoading, setModelLoading] = useState(true);
+    const [modelLoadProgress, setModelLoadProgress] = useState(0);
     // const [predictions,setPredictions] = useState(null);
     useEffect(() => {
        loadModel();
@@ -28,7 +29,10 @@ function Mobilenet() {
       // const download_url = await getDownloadURL(ref(storage, 'mobilenet/model.json'))
       
       const download_url = "https://raw.githubusercontent.com/ashinsabu/monkeypox-website-models/main/mobilenet/model.json";
-      const model = await tf.loadLayersModel(download_url);
+      const model = await tf.loadLayersModel(download_url,  {onProgress: (x) => {
+        setModelLoadProgress(x)
+        console.log(x);
+      }});
       
       setModel(model);
       // console.log("Model Downloaded and set!")
@@ -101,6 +105,7 @@ function Mobilenet() {
       }
     return (
     <>
+        <LoadingBar height={4} color='white' shadow='false'  progress={modelLoadProgress*100}/>
         <NavBar curPage = {2}/>
         <div className="body-container">
           <span className='model-title-bar'><h3>MobileNet V2</h3></span>
@@ -108,7 +113,12 @@ function Mobilenet() {
           <div className='modelContainer mobilenetbg'>
 
             {modelLoading? 
-            <p style={{display: 'flex', alignItems: 'center', height: '200px', padding: '32px', boxSizing:'border-box'}}>Downloading MobileNet from Cloud Resource...</p>
+            <div>
+              <p style={{display: 'flex', justifyContent: 'center', alignItems: 'center',height: '200px', padding: '16px', boxSizing:'border-box', flexDirection: 'column',gap:'32px'}}>
+                <span>Downloading and initializing MobileNet from Cloud Resource...</span>
+                <span style={{backgroundColor: '#00000046', padding:'4px'}}>Progress: {(Math.round(modelLoadProgress*100 * 100) / 100).toFixed(2)}%</span></p>
+                <span></span>
+            </div>
             : 
             <>
               <ModelInputBox handleImageChange={handleImageChange} handleThresholdChange={handleThresholdChange} imgFile={imgFile} />
@@ -119,7 +129,7 @@ function Mobilenet() {
 
             
           </div>
-          
+
           <Link to="/try" className='close-button'>{"< Back to Model Page"}</Link>
           <p className='note'>Note: If loading is taking too long check your bandwidth, try reuploading the image or refreshing.</p>
         </div>
