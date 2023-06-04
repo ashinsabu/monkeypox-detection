@@ -5,11 +5,11 @@ import NavBar from '../components/NavBar';
 import './ResNet.css'
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
-// import { getStorage, ref, getDownloadURL } from "firebase/storage";
-// import { app } from '../firebase';
 import ModelOutputBox from '../components/ModelOutputBox';
 import ModelInputBox from '../components/ModelInputBox';
 import loadingGif from "../assets/loading-gif.gif"
+import LoadingBar from 'react-top-loading-bar';
+import { LoadingInfo } from '../components/LoadingInfo';
 function ResNet() {
     const [model, setModel] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -17,6 +17,7 @@ function ResNet() {
     const [imgFile,setImgFile] = useState(null);
     const [threshold,setThreshold] = useState(0.5);
     const [modelLoading, setModelLoading] = useState(true);
+    const [modelLoadProgress, setModelLoadProgress] = useState(0);
     // const [predictions,setPredictions] = useState(null);
     useEffect(() => {
        loadModel();
@@ -28,7 +29,10 @@ function ResNet() {
       // const download_url = await getDownloadURL(ref(storage, 'mobilenet/model.json'))
       
       const download_url = "https://raw.githubusercontent.com/ashinsabu/monkeypox-website-models/main/resnet/model.json";
-      const model = await tf.loadLayersModel(download_url);
+      const model = await tf.loadLayersModel(download_url,  {onProgress: (x) => {
+        setModelLoadProgress(x)
+        console.log(x);
+      }});
       
       setModel(model);
       // console.log("Model Downloaded and set!")
@@ -101,6 +105,7 @@ function ResNet() {
       }
     return (
     <>
+        <LoadingBar height={4} color='white' shadow='false'  progress={modelLoadProgress*100}/>
         <NavBar curPage = {2}/>
         <div className="body-container">
           <span className='model-title-bar'><h3>ResNet50 V2</h3></span>
@@ -108,13 +113,9 @@ function ResNet() {
           <div className='modelContainer resnetbg'>
 
             {modelLoading? 
-            <div className='resnet-loading'>
-                <p style={{display: 'flex', alignItems: 'center'}}>Downloading ResNet from Cloud Resource...</p>
-                
-                <img src={loadingGif} alt='ResNet Loading...'/>
-
-                <p style={{display: 'flex', alignItems: 'center'}}>It may take a while to load </p>
-                <p style={{display: 'flex', alignItems: 'center'}}>since ResNet is a heavier model. (~100MB)</p>
+            <div className='resnet-loading'>   
+                <LoadingInfo modelName = 'xception' modelLoadProgress ={modelLoadProgress}/>      
+                <p style={{display: 'flex', alignItems: 'center'}}>It may take a while to load since ResNet is a heavier model. (~100MB)</p>
             </div>
             : 
             <>
