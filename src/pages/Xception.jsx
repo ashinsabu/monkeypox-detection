@@ -7,7 +7,8 @@ import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import ModelOutputBox from '../components/ModelOutputBox';
 import ModelInputBox from '../components/ModelInputBox';
-
+import LoadingBar from 'react-top-loading-bar';
+import { LoadingInfo } from '../components/LoadingInfo';
 function Xception() {
     const [model, setModel] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -15,7 +16,7 @@ function Xception() {
     const [imgFile,setImgFile] = useState(null);
     const [threshold,setThreshold] = useState(0.5);
     const [modelLoading, setModelLoading] = useState(true);
-    // const [predictions,setPredictions] = useState(null);
+    const [modelLoadProgress, setModelLoadProgress] = useState(0);
     useEffect(() => {
        loadModel();
     }, []);
@@ -26,10 +27,15 @@ function Xception() {
       // const download_url = await getDownloadURL(ref(storage, 'mobilenet/model.json'))
       
       const download_url = "https://raw.githubusercontent.com/ashinsabu/monkeypox-website-models/main/xception/model.json";
-      // fix for loadLayersModel is in Models repository https://github.com/ashinsabu/monkeypox-website-models/commit/2fc2225711d510fe2d99b264a82aefb6ccca6992
+      
+      // fix for loadLayersModel for Xception is in Models repository https://github.com/ashinsabu/monkeypox-website-models/commit/2fc2225711d510fe2d99b264a82aefb6ccca6992
       // solution from https://github.com/tensorflow/tfjs/issues/1739
       // TODO: See why this works
-      const model = await tf.loadLayersModel(download_url);
+      
+      const model = await tf.loadLayersModel(download_url,  {onProgress: (x) => {
+        setModelLoadProgress(x)
+        // console.log(x);
+      }});
       
       setModel(model);
       // console.log("Model Downloaded and set!")
@@ -102,6 +108,8 @@ function Xception() {
       }
     return (
     <>
+        <LoadingBar height={4} color='white' shadow='false'  progress={modelLoadProgress*100}/>
+
         <NavBar curPage = {2}/>
         <div className="body-container">
           <span className='model-title-bar'><h3>Xception</h3></span>
@@ -109,8 +117,7 @@ function Xception() {
           <div className='modelContainer mobilenetbg'>
 
             {modelLoading? 
-            <p style={{display: 'flex', alignItems: 'center', height: '200px', padding: '32px', boxSizing:'border-box'}}>Downloading Xception from Cloud Resource...</p>
-            : 
+            <LoadingInfo modelName = 'xception' modelLoadProgress ={modelLoadProgress}/>            : 
             <>
               <ModelInputBox handleImageChange={handleImageChange} handleThresholdChange={handleThresholdChange} imgFile={imgFile} />
               
