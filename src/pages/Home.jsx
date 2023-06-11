@@ -49,8 +49,7 @@ const Home = () => {
                             <h1>Xception</h1>
                             <p className='info-text'>Xception is a convolutional neural network (CNN) architecture that was introduced as an extension of the Inception architecture, with the goal of improving efficiency and performance in image recognition tasks. Xception stands for "Extreme Inception," and it leverages depthwise separable convolutions, which are a more efficient alternative to traditional convolutional operations.</p>
                             <p className='info-text'>The key feature of Xception is the use of depthwise separable convolutions, which separate the spatial and channel-wise operations. In traditional convolutions, the same kernel is applied to all input channels, which can be computationally expensive. In depthwise separable convolutions, the spatial convolution is applied independently to each input channel, followed by a pointwise convolution that applies a 1x1 convolutional kernel to combine the output channels. This reduces the number of parameters and computations, resulting in a more efficient and compact network architecture.</p>
-                            <span style={{color: "#ffffffa1"}}> Model not hosted yet due to size</span>
-                        </div>
+                            <Link to="/try/xception" className='box-with-white-hover-bg'><p>Try Xception {">>"}</p></Link>                          </div>
                     </div>
                     
 
