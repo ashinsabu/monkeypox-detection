@@ -6,14 +6,27 @@ import { Link } from 'react-router-dom';
 import neuralNetImg from "../assets/pngegg.png"
 import neuralnetImg2 from "../assets/simplenn.png"
 import neuralnetImg3 from "../assets/xception.png"
+import { useEffect } from 'react';
+import { analytics } from '../firebase';
+import { getAnalytics,logEvent, setCurrentScreen } from 'firebase/analytics';
 const Home = () => {
+    useEffect(() => {
+        // Log event when the component mounts (user opens the homepage)
+        // console.log('logged visit')
+        // const analytics = getAnalytics();
+        setCurrentScreen(analytics,'Home')
+        logEvent(analytics, 'screen_view', {
+            screen_name: 'Home',
+            screen_class: 'Home',
+        });
+    }, []);
     return (
         <>
             <NavBar curPage = {0}/>
             <div className="main-container">
                 <div className="hero">
                     <h2>Highly accurate, </h2>
-                    <h1>State of the art </h1>
+                    <h1>State of the Art </h1>
                     <h2>Monkeypox Detection Models</h2>
                     <div className='hero-bottom-buttons'>
                         <Link to="/research" className='box-with-white-hover-bg'><p>View research</p></Link>

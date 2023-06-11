@@ -9,6 +9,8 @@ import ModelOutputBox from '../components/ModelOutputBox';
 import ModelInputBox from '../components/ModelInputBox';
 import LoadingBar from 'react-top-loading-bar';
 import { LoadingInfo } from '../components/LoadingInfo';
+import { analytics } from '../firebase';
+import { setCurrentScreen,logEvent } from 'firebase/analytics';
 function ResNet() {
     const [model, setModel] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -19,7 +21,12 @@ function ResNet() {
     const [modelLoadProgress, setModelLoadProgress] = useState(0);
     // const [predictions,setPredictions] = useState(null);
     useEffect(() => {
-       loadModel();
+      loadModel();
+      setCurrentScreen(analytics,'ResNet')
+      logEvent(analytics, 'screen_view', {
+        screen_name: 'ResNet',
+        screen_class: 'model',
+    });
     }, []);
     
     const loadModel = async () => {

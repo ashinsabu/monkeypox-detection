@@ -6,7 +6,17 @@ import Footer from '../components/Footer';
 import neuralNetImg from "../assets/pngegg.png"
 import neuralnetImg2 from "../assets/simplenn.png"
 import neuralnetImg3 from "../assets/xception.png"
+import { useEffect } from 'react';
+import { analytics } from '../firebase';
+import { setCurrentScreen,logEvent } from 'firebase/analytics';
 const TryModel = () => {
+    useEffect(() => {
+        setCurrentScreen(analytics,'Trymodel')
+        logEvent(analytics, 'screen_view', {
+            screen_name: 'Trymodel',
+            screen_class: 'Trymodel',
+        });
+      }, []);
     return (
         <div>
             <NavBar curPage = {2}/>

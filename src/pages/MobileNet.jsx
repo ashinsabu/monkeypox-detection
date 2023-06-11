@@ -11,6 +11,8 @@ import ModelOutputBox from '../components/ModelOutputBox';
 import ModelInputBox from '../components/ModelInputBox';
 import LoadingBar from 'react-top-loading-bar';
 import { LoadingInfo } from '../components/LoadingInfo';
+import { analytics } from '../firebase';
+import { setCurrentScreen, logEvent } from 'firebase/analytics';
 function Mobilenet() {
     const [model, setModel] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -21,6 +23,14 @@ function Mobilenet() {
     const [modelLoadProgress, setModelLoadProgress] = useState(0);
     // const [predictions,setPredictions] = useState(null);
     useEffect(() => {
+        // Log event when the component mounts (user opens the homepage)
+        // console.log('logged visit')
+        // const analytics = getAnalytics();
+      setCurrentScreen(analytics,'MobileNet')
+      logEvent(analytics, 'screen_view', {
+          screen_name: 'MobileNet',
+          screen_class: 'model',
+      });
        loadModel();
     }, []);
     

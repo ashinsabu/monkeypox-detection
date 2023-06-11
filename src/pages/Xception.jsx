@@ -9,6 +9,8 @@ import ModelOutputBox from '../components/ModelOutputBox';
 import ModelInputBox from '../components/ModelInputBox';
 import LoadingBar from 'react-top-loading-bar';
 import { LoadingInfo } from '../components/LoadingInfo';
+import { setCurrentScreen,logEvent } from 'firebase/analytics';
+import { analytics } from '../firebase';
 function Xception() {
     const [model, setModel] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -18,6 +20,11 @@ function Xception() {
     const [modelLoading, setModelLoading] = useState(true);
     const [modelLoadProgress, setModelLoadProgress] = useState(0);
     useEffect(() => {
+      setCurrentScreen(analytics,'Xception')
+      logEvent(analytics, 'screen_view', {
+          screen_name: 'Xception',
+          screen_class: 'model',
+      });
        loadModel();
     }, []);
     

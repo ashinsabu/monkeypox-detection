@@ -1,4 +1,5 @@
 import '../App.css'
+import { useEffect } from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import "./About.css"
@@ -8,8 +9,19 @@ import adityaImage from "../assets/adityagupta.jpg"
 import LinkedIn from "../assets/linkedin.png";
 import GitHub from "../assets/github.png";
 import Twitter from "../assets/twitter.png";
-
+import { analytics } from '../firebase';
+import { logEvent, setCurrentScreen } from 'firebase/analytics';
 const About = () => {
+    useEffect(() => {
+        // Log event when the component mounts (user opens the homepage)
+        // console.log('logged visit')
+        // const analytics = getAnalytics();
+        setCurrentScreen(analytics,'About')
+        logEvent(analytics, 'screen_view', {
+            screen_name: 'About',
+            screen_class: 'About',
+        });
+    }, []);
     return (
         <div>
             <NavBar curPage = {1}/>
