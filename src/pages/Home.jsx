@@ -25,7 +25,7 @@ const Home = () => {
     <>
       <NavBar curPage={0} />
       <div className="main-container">
-        <div id="testt" className="hero">
+        <div className="hero">
           <h2>Highly accurate, </h2>
           <h1>State of the Art </h1>
           <h2>Monkeypox Detection Models</h2>
@@ -37,11 +37,11 @@ const Home = () => {
               <p>Models Playground </p>
             </Link>
           </div>
+          <div class="div-wrapper">
+            <img src={downArrow} width="50" alt="downArrow"></img>
+          </div>
         </div>
         <div className="home-content">
-          <a href="#my-footer">
-            <img src={downArrow} width="50" alt="downArrow"></img>
-          </a>
           <h1>The models</h1>
           <div className="info-container">
             <img src={neuralnetImg2} alt="MobileNet"></img>
