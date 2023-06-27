@@ -1,108 +1,121 @@
-body{
-     color: white;
+body {
+  color: white;
 }
-.hero{
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    justify-content: center;
-    height: calc(100vh - 80px);
-    
-    padding-left: 10vw;
-    padding-right: 10vw;
+.hero {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  height: calc(100vh - 80px);
+
+  padding-left: 10vw;
+  padding-right: 10vw;
+  position: relative;
 }
 .hero > h2 {
-    font-size: 2.2em;
-    text-transform: uppercase;
-    /* font-weight: bolder; */
+  font-size: 2.2em;
+  text-transform: uppercase;
+  /* font-weight: bolder; */
 }
 .hero > h1 {
-    font-size: 2.7em;
-    text-transform: uppercase;
-    font-weight: bolder;
+  font-size: 2.7em;
+  text-transform: uppercase;
+  font-weight: bolder;
 }
-.hero-bottom-buttons{
-    margin-top: 16px;
-    display: flex;
-    gap: 8px;
+.hero-bottom-buttons {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
 }
-.box-with-white-hover-bg, #viewPlayground{
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center
+.box-with-white-hover-bg,
+#viewPlayground {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.box-with-white-hover-bg{
-    border-radius: 0 0.4rem;
-    padding: 6px 10px; 
-    border: 1px solid white;
+.box-with-white-hover-bg {
+  border-radius: 0 0.4rem;
+  padding: 6px 10px;
+  border: 1px solid white;
 }
-.box-with-white-hover-bg:hover{
-    background-color: white;
-    color: black;
+.box-with-white-hover-bg:hover {
+  background-color: white;
+  color: black;
 }
-#viewPlayground{
-    text-decoration: underline white;
-    text-underline-offset: 2px;
+#viewPlayground {
+  text-decoration: underline white;
+  text-underline-offset: 2px;
 }
-#viewPlayground:hover{
-    text-decoration: underline rgba(255, 255, 255, 0.708);
+#viewPlayground:hover {
+  text-decoration: underline rgba(255, 255, 255, 0.708);
 }
-.home-content{
-    background-color: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(1px);
-    padding: 40px;
-    padding-left: 10vw;
-    padding-right: 10vw;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.home-content {
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(1px);
+  padding: 40px;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.home-content > h1{
-    /* text-align: center; */
-    font-size: 2.5em;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-bottom: 32px;
+.home-content > h1 {
+  /* text-align: center; */
+  font-size: 2.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 32px;
 }
-.info-container{
-    display: flex;
-    gap: 16px;
+.info-container {
+  display: flex;
+  gap: 16px;
 }
-.alternating{
-    flex-direction: row-reverse;
+.alternating {
+  flex-direction: row-reverse;
 }
-.info-container > div{
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 16px;
+.info-container > div {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 16px;
 }
 .info-container > div > h1 {
-    width: 100%;
-    border-bottom: 1px solid white;
+  width: 100%;
+  border-bottom: 1px solid white;
 }
-.info-container > img{
-    padding: 5vw;
-    width: 20vw;
-    height: 20vw;
+.info-container > img {
+  padding: 5vw;
+  width: 20vw;
+  height: 20vw;
 }
-.within-text-link{
-    color: white;
-    text-decoration: underline;
+.within-text-link {
+  color: white;
+  text-decoration: underline;
 }
-.within-text-link:hover{
-    color: rgba(255, 255, 255, 0.822);
+.within-text-link:hover {
+  color: rgba(255, 255, 255, 0.822);
 }
-.info-text{
-    color: rgba(255, 255, 255, 0.811);
+.info-text {
+  color: rgba(255, 255, 255, 0.811);
+}
+.down-arrow-wrapper {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.div-wrapper img {
+  position: absolute;
+  bottom: 0;
 }
 @media only screen and (max-width: 1000px) {
-    .info-container{
-        flex-direction: column;
-        align-items: center;
-    }
-    .info-container img{
-        display: none;
-    }
+  .info-container {
+    flex-direction: column;
+    align-items: center;
   }
+  .info-container img {
+    display: none;
+  }
+}
