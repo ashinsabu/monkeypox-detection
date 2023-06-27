@@ -10,6 +10,7 @@ body {
 
   padding-left: 10vw;
   padding-right: 10vw;
+  position: relative;
 }
 .hero > h2 {
   font-size: 2.2em;
@@ -98,10 +99,12 @@ body {
 .info-text {
   color: rgba(255, 255, 255, 0.811);
 }
-.div-wrapper {
-  position: relative;
-  height: 700px;
+.down-arrow-wrapper {
+  position: absolute;
   text-align: center;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .div-wrapper img {
   position: absolute;

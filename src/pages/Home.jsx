@@ -37,7 +37,7 @@ const Home = () => {
               <p>Models Playground </p>
             </Link>
           </div>
-          <div class="div-wrapper">
+          <div class="down-arrow-wrapper">
             <img src={downArrow} width="50" alt="downArrow"></img>
           </div>
         </div>
