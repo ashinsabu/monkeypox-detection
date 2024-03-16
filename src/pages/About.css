@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 .about-content{
     display: flex;
     flex-direction: column;
@@ -90,6 +91,52 @@
     width: 28px;
     height: 28px;
 }
+.prepaper{
+    font-size: 20px;
+}
+.research-paper-like-div {
+    align-self: center;
+    background-color: white;
+    padding: 50px 64px;
+    margin-top: 32px;
+    width: 60vw;
+    box-sizing: border-box;
+}
+.research-paper-like-div p, .research-paper-like-div h3, .research-paper-like-div h4 {
+    color: black !important;
+}
+.research-paper-like-div h3 {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    font-size: 30px;
+}
+.research-paper-like-div h4 {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-size: 24px;
+}
+.research-paper-like-div p {
+    line-height: 2;
+    margin-bottom: 24px;
+}
+.metadata {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    margin-top: 32px;
+}
+.metadata a{
+    color: white;
+    padding-bottom: 8px;
+    border-bottom: 1px solid transparent;
+    font-size: 24px;
+}
+.metadata a:hover {
+    border-bottom: 1px solid white;
+}
 @media only screen and (max-width: 800px) {
     .about-content{
         padding: 8vw;
@@ -97,5 +144,27 @@
     }
     .about-content h1{
         font-size: 28px;
+    }
+    .prepaper{
+        font-size: 15px;
+    }
+    .research-paper-like-div {
+        padding: 16px 32px;
+        margin-top: 32px;
+        width: 100vw;
+        box-sizing: border-box;
+    }
+    .research-paper-like-div h3 {
+        font-size: 22px;
+    }
+    .research-paper-like-div h4 {
+        font-size: 18px;
+    }
+    .research-paper-like-div p {
+        line-height: 2;
+        margin-bottom: 16px;
+    }
+    .metadata a{
+        font-size: 18px;
     }
   }
