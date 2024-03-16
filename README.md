@@ -10,6 +10,8 @@ To try out the models yourself go <a href = "https://monkeypoxdetect.web.app/try
 # About the research conducted
 Extensive research and experimentation on an open source dataset from Kaggle was conducted by <a href = "https://www.linkedin.com/in/rohan-thorat-b1655a253/">Rohan Thorat</a> and Mr. Aditya Gupta of Manipal University Jaipur.
 
+<a href="https://link.springer.com/article/10.1007/s11042-024-18750-7" target="__blank">READ FULL RESEARCH HERE</a>
+
 Code for model development is available <a href="https://github.com/rohanthorat27/Monkeypox-Detection" target = "_blank">here</a>
 
 # Find the models here
