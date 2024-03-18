@@ -149,22 +149,30 @@
         font-size: 15px;
     }
     .research-paper-like-div {
-        padding: 16px 32px;
+        padding: 32px;
         margin-top: 32px;
-        width: 100vw;
+        width: 90vw;
         box-sizing: border-box;
     }
     .research-paper-like-div h3 {
-        font-size: 22px;
+        font-size: 16px;
     }
     .research-paper-like-div h4 {
-        font-size: 18px;
+        font-size: 14px;
     }
     .research-paper-like-div p {
         line-height: 2;
         margin-bottom: 16px;
+        font-size: 10px;
+        line-height: 1.5;
     }
     .metadata a{
-        font-size: 18px;
+        font-size: 16px;
+        border-bottom: 1px solid white;
+        padding-bottom: 0;
+        margin-bottom: 8px;
+    }
+    .metadata {
+        gap: 4px;
     }
   }
