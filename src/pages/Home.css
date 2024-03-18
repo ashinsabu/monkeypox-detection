@@ -38,6 +38,7 @@ body {
   border-radius: 0 0.4rem;
   padding: 6px 10px;
   border: 1px solid white;
+  will-change: background-color, color;
 }
 .box-with-white-hover-bg:hover {
   background-color: white;
@@ -46,6 +47,7 @@ body {
 #viewPlayground {
   text-decoration: underline white;
   text-underline-offset: 2px;
+  will-change: text-decoration;
 }
 #viewPlayground:hover {
   text-decoration: underline rgba(255, 255, 255, 0.708);
@@ -92,6 +94,7 @@ body {
 .within-text-link {
   color: white;
   text-decoration: underline;
+  will-change: color;
 }
 .within-text-link:hover {
   color: rgba(255, 255, 255, 0.822);

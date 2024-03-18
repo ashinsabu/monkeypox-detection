@@ -22,7 +22,7 @@ const Footer = () => {
             View Original Research Code
           </a>
           <a
-            href="https://github.com/rohanthorat27/Monkeypox-Detection"
+            href="https://doi.org/10.1007/s11042-024-18750-7"
             target="__blank"
           >
             View Research Paper
