@@ -54,7 +54,7 @@ const About = () => {
                     <h1>The Team</h1>
                     <div className="team-cards">
                         <div className="team-member">
-                            <img src={rohanImage} alt="Rohan Thorat" loading='lazt'/>
+                            <img src={rohanImage} alt="Rohan Thorat" loading='lazy'/>
                             <div className="">
                                 <h3>Rohan Thorat</h3>
                                 <h4>Research, Literature & Model Development</h4>
