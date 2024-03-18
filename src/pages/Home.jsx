@@ -44,7 +44,7 @@ const Home = () => {
         <div className="home-content">
           <h1>The models</h1>
           <div className="info-container">
-            <img src={neuralnetImg2} alt="MobileNet"></img>
+            <img src={neuralnetImg2} alt="MobileNet" loading="lazy"></img>
             <div>
               <h1>MobileNet</h1>
               <p className="info-text">
@@ -77,7 +77,7 @@ const Home = () => {
             </div>
           </div>
           <div className="info-container alternating">
-            <img src={neuralnetImg3} alt="ResNet"></img>
+            <img src={neuralnetImg3} alt="ResNet" loading="lazy"></img>
             <div>
               <h1>ResNet50</h1>
               <p className="info-text">
@@ -122,7 +122,7 @@ const Home = () => {
             </div>
           </div>
           <div className="info-container">
-            <img src={neuralNetImg} alt="Xception"></img>
+            <img src={neuralNetImg} alt="Xception" loading="lazy"></img>
             <div>
               <h1>Xception</h1>
               <p className="info-text">

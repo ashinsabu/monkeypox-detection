@@ -24,19 +24,19 @@ const TryModel = () => {
                 <h2>Choose Model to Test</h2>
                 <div className="model-choose-container">
                     <Link to="/try/mobilenet" className='trybox'>
-                        <img src = {neuralnetImg2} alt='MobileNet'></img>
+                        <img src = {neuralnetImg2} alt='MobileNet' loading='lazy'></img>
                         <p className='model-choose-title'>MobileNet V2</p>
                         <p className='model-choose-subtitle'>The portable and faster but less accurate model</p> 
                     </Link>
                     
                     <Link to="/try/xception" className='trybox'>
-                        <img src = {neuralNetImg} alt='MobileNet'></img>
+                        <img src = {neuralNetImg} alt='MobileNet' loading='lazy'></img>
                         <p className='model-choose-title'>Xception</p>
                         <p className='model-choose-subtitle'>A mid-sized graph based model that trades accuracy for faster predictions</p> 
                     </Link>
 
                     <Link to="/try/resnet" className='trybox'>
-                        <img src = {neuralnetImg3} alt='MobileNet'></img>
+                        <img src = {neuralnetImg3} alt='MobileNet' loading='lazy'></img>
                         <p className='model-choose-title'>ResNet50 V2</p>
                         <p className='model-choose-subtitle'>Our MOST accurate model</p> 
                         <p className='model-choose-subtitle'>Slow to load and predict but highly accurate</p> 

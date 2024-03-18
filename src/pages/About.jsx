@@ -13,9 +13,6 @@ import { analytics } from '../firebase';
 import { logEvent, setCurrentScreen } from 'firebase/analytics';
 const About = () => {
     useEffect(() => {
-        // Log event when the component mounts (user opens the homepage)
-        // console.log('logged visit')
-        // const analytics = getAnalytics();
         setCurrentScreen(analytics,'About')
         logEvent(analytics, 'screen_view', {
             screen_name: 'About',
@@ -57,7 +54,7 @@ const About = () => {
                     <h1>The Team</h1>
                     <div className="team-cards">
                         <div className="team-member">
-                            <img src={rohanImage} alt="Rohan Thorat" />
+                            <img src={rohanImage} alt="Rohan Thorat" loading='lazt'/>
                             <div className="">
                                 <h3>Rohan Thorat</h3>
                                 <h4>Research, Literature & Model Development</h4>
@@ -75,7 +72,7 @@ const About = () => {
                             </div>
                         </div>
                         <div className="team-member">
-                            <img src={ashinImage} alt="Ashin Sabu" />
+                            <img src={ashinImage} alt="Ashin Sabu" loading='lazy'/>
                             <div>
                                 <h3>Ashin Sabu</h3>
                                 <h4>Web application and Model Deployment</h4>
@@ -95,7 +92,7 @@ const About = () => {
                             </div>
                         </div>
                         <div className="team-member">
-                            <img src={adityaImage} alt="Aditya Gupta" />
+                            <img src={adityaImage} alt="Aditya Gupta" loading='lazy' />
                             <div>
                                 <h3>Prof. Aditya Gupta</h3>
                                 <h4>Mentor for Research and Literature</h4>

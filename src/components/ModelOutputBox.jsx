@@ -6,7 +6,7 @@ const ModelOutputBox = ({loading , predictedClass, threshold}) => {
               <p className='container-title'>Output Tensor Information / Results</p>
               <div className='container-content'>
                   {loading?
-                    <img src='https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif' style={{width: 28}} alt="Loading..."></img>
+                    <img src='https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif' style={{width: 28}} alt="Loading..." loading='lazy'></img>
                     :
                     (predictedClass === null) ? 
                       `No Output`

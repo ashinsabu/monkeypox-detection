@@ -15,6 +15,7 @@
     padding: 4px;
     color: white;
     border-bottom: 1px solid transparent;
+    will-change: border-bottom;
 }
 .close-button:hover{
     border-bottom: 1px solid white;

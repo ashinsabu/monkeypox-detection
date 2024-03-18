@@ -17,6 +17,7 @@
     border-bottom: 1px solid transparent;
     background-color: rgba(0, 0, 0, 0.493);
     margin-top: 8px;
+    will-change: border-bottom;
 }
 .close-button:hover{
     border-bottom: 1px solid white;
